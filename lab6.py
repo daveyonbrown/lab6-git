@@ -10,7 +10,10 @@ def encode(orig_pass):
 
 
 def decode(password):
-    pass
+    decoded = ''
+    for item in password:
+        decoded += str((int(item) - 3) % 10)
+    return decoded
 
 def main():
     testing = True
@@ -25,7 +28,7 @@ def main():
             print("Your password has been encoded and stored!\n")
 
         elif option == 2:
-           pass
+           print(f"The encoded password is {orig_pass}, and the original password is {decode(orig_pass)}.")
 
         else:
             testing = False
